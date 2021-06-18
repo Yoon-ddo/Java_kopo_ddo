@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="DAO.TranDAODB" project="kopoOpenBankPj02" 
+    file="/kopoOpenBankPj02/src/DAO/TranDAODB.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="216" x="617" y="262"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="DAO.LogDAODB" project="kopoOpenBankPj02" 
+    file="/kopoOpenBankPj02/src/DAO/LogDAODB.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="183" x="873" y="262"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="DAO.UserAccDAODB" project="kopoOpenBankPj02" 
+    file="/kopoOpenBankPj02/src/DAO/UserAccDAODB.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="193" x="1096" y="262"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="DAO.AdminDAODB" project="kopoOpenBankPj02" 
+    file="/kopoOpenBankPj02/src/DAO/AdminDAODB.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="193" x="1329" y="262"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
