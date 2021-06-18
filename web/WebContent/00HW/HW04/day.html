@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		height: 900px;
+		display:flex;
+		align-items:center;
+	}
+	div{
+	 	width: 100px;
+		height: 100px;
+		line-height:100px;
+		text-align:center;
+		float:left;
+		position:relative;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+
+	$(document).ready(function() {
+		
+		$('div').hover(function(){
+			
+			$(this).animate({width:'130px',height:'130px','line-height':'130px'},200)
+			/*
+			let cnt = 0
+			
+			if(cnt == 0){
+				let day = $(this).text() + '요일'
+				$(this).text(day)
+				cnt++
+			}*/
+			
+			let day = $(this).text()+'요일'
+			$(this).text(day)
+			
+			
+		}, function(){
+			$(this).animate({width:'100px',height:'100px','line-height':'100px'},200)
+			
+			let rday = $(this).text().substring(0,1)
+			$(this).text(rday)
+		})
+	})
+</script>
+
+</head>
+<body>
+		<div style="background-color:red;">일</div>
+		<div style="background-color:orange;">월</div>
+		<div style="background-color:yellow;">화</div>
+		<div style="background-color:green;">수</div>
+		<div style="background-color:blue;">목</div>
+		<div style="background-color:darkblue;">금</div>
+		<div style="background-color:purple;">토</div>	
+
+</body>
+</html>

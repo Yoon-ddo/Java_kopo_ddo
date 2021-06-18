@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+<script>
+	/*
+		10 ~ 100사이의 숫자를 입력하세요 : 32
+		1
+		2
+		짝
+		4
+		5
+		짝
+		7
+		8
+		짝
+		뽀숑
+		11
+		12
+		짝
+		..
+		18
+		짝
+		뽀뽀숑
+		...
+		28
+		짝
+		짝뽀뽀보쑝
+		짝
+		짝
+	*/
+	
+	while(true){
+		
+		var num = prompt('10 ~ 100사이의 숫자를 입력하세요 :')
+		let bool = isNaN(Number(num)) // 숫자면 false
+		if (!bool){
+			document.write(num + '<br>')
+			num = Number(num)
+			if(num<10 || num>101){
+				alert('다시입력하세요!')
+				continue
+			}else{
+				
+				for(let i = 1; i<= num; i++){
+					
+					if(i<10){
+						if(i == 3 || i==6 || i==9){
+							document.write('짝' + '<br>')
+						}else{
+							document.write(i + '<br>')
+						}
+					}else{
+						var n1 = Number(parseInt(i/10)) // 10의자리
+						var n2 = i%10 // 1의자리
+						
+						//10의자리비교
+						if (n1 == 3 || n1 == 6 || n1 == 9){ //3,6,9
+								document.write('짝')
+							if(n2 == 0){
+								for(let ix = 0; ix < n1; ix++){
+									document.write('뽀')
+								}
+								document.write('숑' + '<br>')
+							}else if(n2 == 3 || n2 == 6 || n2 == 9){
+								document.write('짝' + '<br>')							
+							} else{
+								document.write('<br>')							
+							}
+						}else{
+							if(n2 == 3 || n2 == 6 || n2 == 9){
+								document.write('짝' + '<br>')
+							}else if(n2 == 0){
+								for(let idx = 0; idx<n1; idx++){
+									document.write('뽀')
+								}
+								document.write('숑' + '<br>')								
+							}else{
+								document.write(i + '<br>')
+							}
+						}
+					}
+					
+				}
+			}
+			break
+		}else{
+			alert('다시입력하세요!')
+			continue
+		}
+	}
+	
+	
+	
+
+	
+	
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

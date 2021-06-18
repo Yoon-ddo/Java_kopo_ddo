@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calc</title>
+	<style>
+	
+		table{
+			bprder-style: ridge;
+		}
+		
+		input[type="button"]{
+			width:100%;
+		}
+		
+		#display{
+			text-align: right;
+     	 	padding-right: 5px;
+		}
+	</style>
+	
+	<script>
+		function clickBtn(data){
+			let monitor = document.getElementById('display')
+			if(data != '='){
+				monitor.value += data				
+			}else{
+				monitor.value = eval(monitor.value)
+			}
+		}
+	</script>
+
+
+</head>
+<body>
+
+<table border="2">
+	<tr>
+		<td colspan="4"><input type="text" id="display"></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="7" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="8" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="9" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="/" onclick="clickBtn(this.value)"></td>
+	</tr>                                               
+	<tr>                                                
+		<td><input type="button" value="4" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="5" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="6" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="*" onclick="clickBtn(this.value)"></td>
+	</tr>                                               
+	<tr>                                                
+		<td><input type="button" value="1" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="2" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="3" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="-" onclick="clickBtn(this.value)"></td>
+	</tr>                                           
+	<tr>                                              
+		<td><input type="button" value="0" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="." onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="+" onclick="clickBtn(this.value)"></td>
+		<td><input type="button" value="%" onclick="clickBtn(this.value)"></td>
+	</tr>
+	<tr>
+		<td colspan="2" ><input type="button" value="=" onclick="clickBtn(this.value)"></td>
+		<td colspan="2" ><input type="button" value="Clear" onclick="clickBtn(this.value)"></td>
+
+	</tr>
+		
+	
+
+</table>
+	
+	
+</body>
+</html>

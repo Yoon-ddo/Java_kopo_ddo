@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		width:800px;
+		align-items:center;
+	}
+	#menu{
+		width:800px;
+		height:60px;
+		position:relative;
+		background-color:rgba(0,140,140,0.80);
+	}
+	#textb{
+		width:800px;
+		height:600px;
+		position:relative;
+		background-color:lightgray;	
+	}
+	.intext{
+		width:770px;
+		height:570px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: left;
+		background-color:white;	
+	}
+	
+	#shapebox{
+		position:absolute;
+		top:20px;
+		left:20px;
+	}
+	
+	#fonttype{
+		position:absolute;
+		top:20px;
+		left:140px;
+	}
+	
+	#sizebox{
+		position:absolute;
+		top:20px;
+		left:220px;
+	}
+	
+	#set{
+		position:absolute;
+		top:17px;
+		left:310px;
+	}
+	
+	
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		// 글꼴 굵게, 기울이기, 밑줄적용
+		$('#shapebox').change(function(){
+			let shapebox = $('#shapebox option:selected').val()
+			if (shapebox=="bold"){
+				document.execCommand('Bold')
+			}else if(shapebox=="italic"){
+				document.execCommand('Italic')
+				
+			}else if(shapebox == "underline"){
+				document.execCommand('Underline')
+			}else{
+				$('.intext').html($('.intext').text())
+			}
+		})
+		
+	})
+		
+</script>
+</head>
+<body>
+	<div id="menu">
+		<select id="shapebox" style="width:100px;"> 
+		<option selected>텍스트모양</option> 
+		<option value="bold">굵게</option> 
+		<option value="italic">기울이기</option>
+		<option value="underline">밑줄</option> 
+		</select>
+		
+		<select id="fonttype" style="width:70px;"> 
+		<option selected>글꼴</option> 
+		<option value="dottum">돋움</option> 
+		<option value="batang">바탕체</option>
+		<option value="goongseo">궁서체</option>
+		</select>
+		
+		<select id="sizebox" name="sizebox" style="width:70px;"> 
+		<option selected>사이즈</option> 
+		<option value="10">10</option> 
+		<option value="12">12</option> 
+		<option value="14">14</option> 
+		<option value="16">16</option> 
+		<option value="18">18</option> 
+		<option value="20">20</option> 
+		<option value="22">22</option> 
+		<option value="24">24</option> 
+		<option value="26">26</option> 
+		</select>
+		
+		<div id="set">
+			<button class="leftset" onclick="document.execCommand('justifyleft')">왼쪽정렬</button> 
+			<button class="middleset" onclick="document.execCommand('justifycenter')">중앙정렬</button> 
+			<button class="rightset" onclick="document.execCommand('justifyright')">오른쪽정렬</button> 
+		</div>
+		
+		
+		
+
+	</div>
+	<div id="textb">
+		<div class="intext" contenteditable="true" cols="300" rows="60"></div>
+	</div>
+
+
+</body>
+</html>

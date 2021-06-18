@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 목록</title>
+<style>
+	body{
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	table{
+		margin: 10px;
+		text-align: center;
+		width: 1000px;
+	}
+	
+	#titletb{
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+		border-left: none;
+		border-right:none;
+
+	}
+	#infotb{
+		border: 3px;
+		border-style: ridge;
+	}
+
+	#infotb #title{
+		text-align: left;
+		width: 70%;
+	}
+	
+	#infotb #author{
+		width: 10%;
+	}
+	#infotb #enrolldt{
+		width: 10%;
+	}
+
+</style>
+	
+</head>
+<body>
+	<table id="titletb">
+		<tr>
+		<th>
+			<h2>게시판 목록</h2>
+		</th>
+		</tr>
+	
+	</table>
+
+	<table id="infotb" border="1">
+		
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>글쓴이</th>
+			<th>등록일</th>
+		</tr>
+		<tr>
+			<td>46</td>
+			<td id="title"><a href="detailBoard.html">동적인 글</a></td>
+			<td id="author">테스터</td>
+			<td>2012-11-07</td>
+		</tr>
+		<tr>
+			<td >45</td>
+			<td id="title"><a href="detailBoard.html">자바제목</a></td>
+			<td id="author">JDBC</td>
+			<td id="enrolldt">2012-11-07</td>
+		</tr>
+		<tr>
+			<td>44</td>
+			<td id="title"><a href="detailBoard.html">자바제목</a></td>
+			<td id="author">JDBC</td>
+			<td id="enrolldt">2012-11-07</td>
+		</tr>
+		<tr>
+			<td>43</td>
+			<td id="title"><a href="detailBoard.html">자바제목</a></td>
+			<td id="author">JDBC</td>
+			<td id="enrolldt">2012-11-07</td>
+		</tr>
+	</table>
+
+</body>
+</html>

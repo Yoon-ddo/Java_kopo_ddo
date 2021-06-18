@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#background{
+		position : relative;
+	}
+
+	#korea{
+		position : absolute;
+		top:260px;
+		left:325px;
+	}
+	#china{
+		position : absolute;
+		top:280px;
+		left:290px;
+	}
+	#austrailia{
+		position : absolute;
+		top:420px;
+		left:370px;
+	}
+	#namerica{
+		position : absolute;
+		top:260px;
+		left:580px;
+	}
+	#samerica{
+		position : absolute;
+		top:480px;
+		left:670px;
+	}
+	#england{
+		position : absolute;
+		top:210px;
+		left:45px;
+	}
+	#india{
+		position : absolute;
+		top:320px;
+		left:220px;
+	}
+	#safrica{
+		position:absolute;
+		top:420px;
+		left:100px;
+	}
+</style>
+<script>
+
+	// 마우스 위에올리면 줌인, 내리면 줌아웃
+	function zoomIn(event){
+		event.target.style.transform = "scale(1.2)";
+	    event.target.style.zIndex = 1;
+	    event.target.style.transition = "all 0.5s";
+	}
+	function zoomOut(event){
+		event.target.style.transform = "scale(1)";
+	    event.target.style.zIndex = 0;
+	    event.target.style.transition = "all 0.5s";
+	}
+	
+	
+	//시간계산부 (정확한 알고리즘은 모르겠다능...)
+	function showTime(id){
+		var thisid = id
+		var tzO = 0 // 표준시 
+		switch(id){
+		case "korea":
+			thisid = "한국"
+			tzO = 9
+			break
+		case "china":
+			thisid = "중국"
+			tzO = 8
+			break
+		case "austrailia":
+			thisid = "호주"
+			tzO = 10
+			break
+		
+		case "namerica":
+			thisid = "미국"
+			tzO = -8
+			break
+		
+		case "samerica":
+			thisid = "칠레"
+			tzO = -4
+			break
+			
+		case "england":
+			thisid = "영국"
+			tzO = 0
+			break
+		
+		case "india":
+			thisid = "인도"
+			tzO = 5
+			break
+		
+		case "safrica":
+			thisid = "남아프리카공화국"
+			tzO = 2
+			break;
+		}
+		
+		
+		var now = new Date();
+		var tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzO * 3600000); // 표준시를 받으면 그걸로 날짜 받아오는 듯함...
+		now.setTime(tz);
+
+		var s = '[ ' + thisid + ' ] ' +
+				leadingZeros(now.getFullYear(), 4) +
+			'-' + leadingZeros(now.getMonth() + 1, 2) +
+			'-' + leadingZeros(now.getDate(), 2) +
+			' ' + leadingZeros(now.getHours(), 2) +
+			':' + leadingZeros(now.getMinutes(), 2) +
+			':' + leadingZeros(now.getSeconds(), 2)
+		
+		alert(s) //alert창에 출력	
+	}
+	
+	function leadingZeros(n, digits){
+		var zero =''
+		n = n.toString()
+		console.log(n)
+		if(n.length < digits){
+			for(let i = 0; i<digits -n.length; i++){
+				zero += '0'
+			}
+		}
+		return zero+n
+	}
+	
+
+</script>
+</head>
+<body>
+	<div><img src="img/mapp.jpg" width="800" id="background"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="korea" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="china" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="austrailia" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="namerica" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="samerica" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="england" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="india" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+	<div><img src="img/placeholder.png"  width="30" class="country" id="safrica" onmouseenter="zoomIn(event)" onmouseleave="zoomOut(event)" onclick="showTime(this.id)"></div>
+
+
+</body>
+</html>
