@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function returnFunction(){
+		return function(){
+			alert('return function...')
+		}
+	}
+	
+	let ret = returnFunction()
+	ret()
+	//retrurnFunction()()
+	
+	function test(name){
+		var output = 'Hello '+name+'!!!'
+		return function(){
+			alert(output)
+		}
+	}
+	test('홍길홍길')()
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

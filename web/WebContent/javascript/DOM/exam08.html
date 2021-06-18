@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		
+		/*
+		   표준 이벤트 모델 DOM Level2 
+			- addEventListner(이벤트이름, 함수, useCapture)-> 이벤트가 일어나면 함수가 처리한다.
+			- removeEventListener()
+		*/
+		let btn01 = document.getElementById('btn01')
+		btn01.addEventListener('click', function(){
+			alert('btn01 click!!!')
+		})
+		
+		let btn02 = document.getElementById('btn02')
+		let span = document.getElementById('span01')
+		
+		btn02.addEventListener('click', function(){
+			alert('btn02 click!!!')
+		},true) // useCapture를 정의하지 않으면 default는 더블링.
+			//true시 부모에서 자식순으로 바뀐다.
+		
+		span.addEventListener('click', function(){
+			alert('span click!!!')
+		})
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+	<button id="btn01">click</button>
+	<button id="btn02"><span id="span01">click</span></button>
+
+</body>
+</html>

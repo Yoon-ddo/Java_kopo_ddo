@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function func01(){
+		
+		alert(arguments[0] + ' : ' + arguments[1] + ' : ' + arguments[2])
+	}
+	func01(1,2,3)
+	
+	function func02(...numbers){
+		alert(numbers[0] + ' : ' + numbers[1] + ' : ' + numbers[2])
+	}
+	func02(10,20,30)
+	
+	//array 요소 출력
+	function func03(a,b, ...numbers){
+		alert(`${ a } : ${ b } : ${numbers}`)
+	}
+	func03(1,2,30,40,50,60)
+	
+	let array = [10,20,30,40]
+	func01(array)
+	func01.apply(null, array)
+	
+	func03(1, 2, ...array)
+	func03(...array, ...array)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

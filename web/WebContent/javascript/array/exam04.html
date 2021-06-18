@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let books = ['백설공주','피터팬','콩쥐팥쥐','신데렐라']
+	
+	
+	
+	for(let index = 0; index < books.length; index++){
+		document.write(books[index] + "&nbsp;&nbsp;&nbsp;")
+	}
+	document.write('<br>')
+	
+	for(let i in books){
+		document.write(books[i] + "&nbsp;&nbsp;&nbsp;")
+	}
+	document.write('<br>')
+	
+	for(let book of books){
+		document.write(book + "&nbsp;&nbsp;&nbsp;" )
+	}
+	document.write('<br>')
+	
+	books.forEach(function(element, idx, arr){ // 배열의 개수만큼 돈다.
+		// element(=val), idx, array 가 arguments로 날아옴
+		document.write(element + "&nbsp;&nbsp;&nbsp;" )
+	})
+	document.write('<br>')
+	
+	books.sort()//정렬
+	books.forEach(function(element, idx, arr){ // 배열의 개수만큼 돈다.
+		// element(=val), idx, array 가 arguments로 날아옴
+		document.write(element + "&nbsp;&nbsp;&nbsp;" )
+	})
+	document.write('<br>')
+	
+	
+	let nums = [12,6,25,63,4,32,18,4,55,35]
+	document.write("nums : " + nums + '<br>')
+	
+	nums.sort() // 숫자를 문자로 인식해서 앞자리기준으로 정렬
+	document.write("nums (문자형태의 sort) : " + nums + '<br>')
+	
+	nums.sort(function(left, right){ // 숫자 크기순으로 정렬하기 위해서는 callback함수가 필요
+		return left-right
+	})
+	document.write("nums (정수형태의 sort:오름차순) : " + nums + '<br>')
+	
+	nums.sort(function(left, right){ // 숫자 크기순으로 정렬하기 위해서는 callback함수가 필요
+		return right - left
+	})
+	document.write("nums (정수형태의 sort:내림차순) : " + nums + '<br>')
+	
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

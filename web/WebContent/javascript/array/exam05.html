@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let nums = [10,20,30,40,50]
+	document.write('nums : ' + nums + '<br>')
+	
+	/*
+	let copyNums = []
+	for(let num of nums){
+		copyNums.push(num + 100)
+	}
+	document.write('copyNums : ' + copyNums + '<br>')
+	*/
+	
+	
+	let copyNums = nums.map(function(ele){
+		console.log(arguments)
+		return ele + 100
+	})
+	document.write('copyNums : '+ copyNums + '<br>')
+	
+	
+	//조건에 만족하는 요소 배열로 리턴
+	nums = [5,23,1,679,34,67,8,34,12,56]
+	let evenNums = nums.filter(function(ele, idx, array){
+		return ele % 2 == 0 // return 조건을 만족하는 element들만 배열의 요소로 만들어짐!
+	})
+	document.write('nums : ' + nums + '<br>')
+	document.write('evenNums : ' + evenNums + '<br>')
+	
+	//요소 체크 모두 만족할 경우 (t|f)
+	nums = [5,23,1,679,34,67,8,34,12,-56]
+	let bool = nums.every(function(ele){
+		return ele > 0
+	})
+	document.write('양의 정수집합인가요? ' + bool + '<br>')
+
+	//적어도 한개이상 만족하는 경우
+	bool = nums.some(function(ele){
+		return ele %2 == 0
+	})
+	document.write('짝수를 포함하나요? ' + bool + '<br>')
+	
+	// 총합구하기
+	nums = [1,2,3,4,5]
+	let sum  = 0
+	for(const data of nums){
+		sum += data
+	}
+	document.write(nums + '종합 : ' + sum + '<br>')
+	
+	//  데이터가 하나만 남을때까지...
+	nums.reduce(function(before, ele, idx, array){
+		//console.log(arguments)
+		return before + ele
+	})
+	document.write(nums + '종합 : ' + sum +'<br>')
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

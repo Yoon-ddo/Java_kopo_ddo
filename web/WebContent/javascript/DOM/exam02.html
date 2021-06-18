@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		
+		alert('!!')
+		/*
+		let id = document.getElementById('id')
+		console.log(id.innerHTML)
+		id.innerHTML = '아이디'
+		*/
+		
+		// querySelector('') : 선택자에 의해 쿼리를 뽑아내는 것 :: 가장 첫번째것 하나만 바꿔줌
+		let id = document.querySelector('#id')
+		id.innerHTML = '아이디'
+		
+		let pwd = document.querySelector('.pwd')
+		pwd.innerHTML = '패스와드'
+		
+		// querySelectorAll('') : 여러개 배열로 선택
+		
+
+	}
+</script>
+</head>
+<body>
+	<table style="width:100; height:100;" border = "1">
+		<tr>
+			<td id="id">ID</td>
+		</tr>
+		<tr>
+			<td class="pwd">Password</td>
+		</tr>
+		<tr>
+			<td class="pwd">Password2</td>
+		</tr>
+		
+	</table>
+
+</body>
+</html>

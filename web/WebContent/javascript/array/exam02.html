@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let names = ['홍길동','윤길동','박길동','강길동','구길동']
+	document.write(names + '<br>')
+	for (let idx = 0; idx < names.length; idx++){
+		document.write(names[idx] + '<br>')
+		console.log(names[idx])
+	}
+	document.write('<hr>')
+	for(let i in names){ //i는 인덱스
+		document.write(i+" : "+names[i] + '<br>')
+	}
+	document.write('<hr>')
+	for(let name of names){
+		//document.write(name + '<br>')
+		document.write(`${ name }<br>`)
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

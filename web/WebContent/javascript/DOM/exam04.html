@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		
+		// 동적 태그삽입 : createElement() , createTextNode(), appendChild()
+		let h1tag = document.createElement('h1')
+		let text = document.createTextNode('Hello')
+		
+		h1tag.appendChild(text)
+		//console.log(h1tag)
+		document.body.appendChild(h1tag)
+		
+		
+		
+		//img누르면 새창으로 daum사이트 열기
+		let aTag = document.createElement('a')
+		aTag.setAttribute('href', 'https://www.daum.net/')
+		aTag.target = '_blank' // == setAttribute('')
+		
+		
+		let imgTag = document.createElement('img')
+		imgTag.setAttribute('src', 'http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg')
+		
+		aTag.appendChild(imgTag)
+		document.body.appendChild(aTag)
+		
+		
+	}
+</script>
+</head>
+<body>
+	<!--<h1>Hello</h1>  -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#imgs{
+		float:left;
+		heigth:200px;
+	
+	}
+	img{
+		width:200px;
+		height:200px;
+		display:inline-block;
+		float:left;
+	}
+	button{
+		height:200px;
+		float:left;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#leftb').click(function(){
+			$('img').first().appendTo('#imgs')
+		})
+		$('#rightb').click(function(){
+			$('img').last().prependTo('#imgs')
+		})
+		
+		//자동자동
+		setInterval(function(){
+			$('#rightb').trigger('click')
+		},3000)
+		
+	})
+</script>
+
+	<button id="leftb">왼쪽</button>
+	<span id="imgs">
+		<img src="../css/img/cat.jpg">
+		<img src="../css/img/dog.jpg">
+		<img src="../css/img/simson.gif">
+		<img src="../css/img/sun.jpg">	
+	</span>
+	<button id="rightb">오른쪽</button>
+	
+</head>
+<body>
+
+</body>
+</html>

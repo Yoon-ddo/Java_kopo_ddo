@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트으으</title>
+<script>
+
+	/*
+		Level 0 :: 이벤트 추가하는 방법 2가지
+			1) 인라인이벤트모델 - body태그에서 인라인으로 추가
+			2) 고전적이벤트모델 - script onload에 추가 (항상 동적으로 추가하는 건 아님)
+	*/
+	
+	
+	function clickBtn(){
+		setTimeout(function(){
+			alert('3초가 지났다.')
+		},3000)
+	}
+	
+	window.onload = function(){
+		
+		let h1Tag = document.createElement('h1')
+		let text = document.createTextNode('클릭하렴')
+		h1Tag.appendChild(text)
+		document.body.appendChild(h1Tag)
+		
+		//고전적 이벤트 모델 DOM Level0
+		h1Tag.onclick = function(){
+			alert('고전이벤트')
+		}
+		
+		
+		let btn = document.getElementById('btn02')
+		btn.onclick = function(){
+			alert('btn2 click...')
+		}
+		//input value접근하기 ; btn.value = ''로 값변경가능
+
+		
+	}
+	
+</script>
+</head>
+<body>
+	<!-- 인라인 이벤트 모델 :  DOM Level0에 설정된 이벤트 모델 -->
+	<input type="button" value="클릭클릭클릭" onclick="alert('click')">
+	<input type="button" value="타이마~클릭하면 3초후에 알림" onclick="clickBtn()">
+	<input type="button" value="클클릭릭" id="btn02"> 
+</body>
+</html>

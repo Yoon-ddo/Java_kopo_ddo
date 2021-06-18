@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+	let starFunc = function(){
+		$('h2')[0].innerText += '*'
+	}
+	
+	
+	
+	$(document).ready(function(){
+		
+		/*
+		setInterval(function(){
+			starFunc()
+		},1000)
+		*/
+		
+		
+
+		$('h2').click(function(e, data='*'){
+			
+			//data = data ||'*' // 값 초기화
+			//$(this)[0].innerText += '*'
+			$(this)[0].innerText += data
+		})
+		
+		
+		let pid = setInterval(function(){
+			//$('h2').click()  //내가 클릭한것처럼
+			
+			// trigger : 내가 클릭을 수행한것처럼 명령내리고 싶을 때 사용
+			$('h2').trigger('click', '#') // 문자를 지정할 수 있게됨.
+			//$('h2').trigger('click')
+		},1000)
+		
+		setTimeout(function(){
+			cleanInterval(pid)
+			
+		} ,2000)
+		
+	})
+</script>
+</head>
+<body>
+	<h2>start : </h2>
+
+</body>
+</html>

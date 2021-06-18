@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let array = [1,2,3,4,5]
+	let array2 = array//얕은 복사 (같은 공간을 가르킴)
+	
+	console.log('arr : ' + array)
+	console.log('arr2 : ' + array2)
+	
+	
+	array2[0] = 100
+	console.log('arr : ' + array)
+	console.log('arr2 : ' + array2)
+	
+	
+	//깊은 복사
+	array = [1,2,3,4,5]
+	let array3 = []
+	for(let i in array){
+		array3[i] = array[i]
+	}
+	array3[0] = 1234
+	console.log('arr : ' + array)
+	console.log('arr깊복 : ' + array3)
+	
+	//깊은복사2
+	let array4 = [...array]
+	array4[0] = 7
+	console.log('arr : ' + array)
+	console.log('arr깊복 : ' + array4)
+	
+	 
+</script>
+</head>
+<body>
+
+</body>
+</html>

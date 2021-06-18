@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+	let person = {
+		'name' : '홍길동',
+		'phone' : '010-1111-1111',
+		'addr' : '경기도 광명시',
+		'info' : function(){
+			alert('name : ' + name + '\n'
+					+ 'phone : ' + phone + '\n'
+					+ 'addr : ' + addr)
+		}
+	}
+	*/	
+	
+	/*
+	let person = {
+			'name' : '홍길동',
+			'phone' : '010-1111-1111',
+			'addr' : '경기도 광명시',
+			'info' : function(){
+				let msg = ''
+				with(this){
+					msg+= 'name : '+name +'\n'
+					msg+= 'phone : '+phone +'\n'
+					msg+= 'addr : '+addr +'\n'
+				}
+				alert(msg)
+			}
+	}
+	*/
+	
+	/*
+	// 키가 가지고 있는 val를 확인하고 싶을 때 배열처럼 사용하기도 한다.
+	let person = {
+			'name' : '홍길동',
+			'phone' : '010-1111-1111',
+			'addr' : '경기도 광명시',
+			'info' : function(){
+				for(let key in this){
+					console.log(this[key])
+				}
+			}
+	}
+	*/
+	
+	let person = {
+		'name' : '홍길동',
+		'phone' : '010-1111-1111',
+		'addr' : '경기도 광명시',
+		'info' : function(){
+			let msg = ''
+			for(let key in this){
+				msg += key + ' : ' + this[key] + '\n'
+			}
+			alert(msg)
+		}
+	}	
+	
+	person.info()
+	alert(person) //타입보여줌
+	console.log(person) // 내용물 보여줌
+	 
+	// 객체가 지닌 함수를 쓸 수 있다.
+	person.toString = function(){
+		let msg = ''
+			for(let key in this){
+				msg += key + ' : ' + this[key] + '\n'
+		}
+		return msg
+	}
+	alert(person)
+	alert(person.toString())
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

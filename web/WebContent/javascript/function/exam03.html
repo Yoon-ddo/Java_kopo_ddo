@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function func(num1, num2, num3){
+		alert(`${num1}, ${num2}, ${num3}`)
+	}
+	
+	function func(num1, num2, num3){
+		// 0, undefined, null 값 정의하기
+		if(!num1) num1 = 0
+		if(!num2) num2 = 0
+		if(!num3) num3 = 0
+
+		//num = num ||0 도 가능
+		// function func(num1 = 0, num2 = 0, num3 = 0){} 로 초기화 가능.
+		alert(`${num1}, ${num2}, ${num3}`)
+	}
+	func()
+	func(1)
+	func(1,2)
+	func(1,2,3)
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

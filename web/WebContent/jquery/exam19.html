@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		weight:200px;
+		height:200px;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('button').click(function(){
+			//$('img').first().appendTo('body')//body의 맨마지막
+			$('img').last().prependTo('body')
+			
+		})
+		
+	})
+</script>
+
+</head>
+<body>
+
+	<img src="../css/img/cat.jpg">
+	<img src="../css/img/dog.jpg">
+	<img src="../css/img/simson.gif">
+	<img src="../css/img/sun.jpg">
+
+	<br><br>
+	<button>click</button>
+</body>
+</html>

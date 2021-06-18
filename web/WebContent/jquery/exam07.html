@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		background-color:red;
+		width:100px;
+		height:100px;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		$('div').hide(1000)
+		$('div').show(1000)
+		
+		$('div').toggle(1000)
+		$('div').toggle(1000)
+		
+		$('div').fadeOut(1000)
+		$('div').fadeIn(1000)
+		
+		$('div').fadeTo(1000,0.4)
+		
+		$('div').fadeToggle(1000)
+		$('div').fadeToggle(1000)
+		
+		
+		
+	})
+	
+</script>
+
+</head>
+<body>
+	<div></div>
+
+</body>
+</html>

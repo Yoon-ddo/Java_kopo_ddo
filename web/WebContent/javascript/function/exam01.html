@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 1. 선언적 함수 - 호이스팅이 일어남!
+	function testFunction(){
+		alert('testFunction() 호출...')	
+	}
+	//testFunction()
+	
+	function testFunction01(data){
+		alert('data : ' + data)
+	}
+	//testFunction01(123)
+	
+	function testFunction02(a, b){
+		alert(`a : ${ a }, b : ${ b }`)
+	}
+	//testFunction02('A',10)
+	// 자바스크립트는 함수에 대한 오버로딩 X
+	
+	function add(a,b){
+		return a+b
+	}
+	let sum = add(10,20)
+	//alert('총합 : ' + sum)
+	
+	
+	//2. 익명함수 - 호이스팅 일어나지 않음!
+	var func = function test(){
+		alert('test()..')
+	}	
+	//func() // 함수를 가진 변수가 있으면 그 변수로 호출해야함. 함수의 이름이 의미가 없어짐.
+	
+	var func = function(){
+		alert('test()..')
+	}	
+	//func() // 함수를 가진 변수가 있으면 그 변수로 호출해야함. 함수의 이름이 의미가 없어짐.
+	
+	
+	//선언적 함수와 익명함수가 동일 할 때 익명함수가 우선적으로 실행된다.
+	function aaa(){
+		alert('선언적 aaa() 호출')
+	}
+
+	var aaa = function(){
+		alert('익명 aaa() 호출 ... ')
+	}
+	aaa()
+	
+	// callback : 매개변수로 함수를 넘긴 것
+	function callbackFunc(f){
+		f()
+	}
+	callbackFunc( function(){
+		alert('익명함수 호출')
+	})
+	callbackFunc(testFunction)
+	callbackFunc(func)
+	
+	function getSum(a,b){
+		let s = 0
+		while(a<=b){
+			s+=a++
+		}
+		return s
+	}
+	
+	function printSum(a,b){
+		//alert(`${a}~${b} 총합 : ${getSum(a,b)}`)
+		//함수 안에 함수 정의도 가능
+		function sum(a,b){
+			let s = 0
+			while(a<=b){
+				s+=a++
+			}
+			return s
+		}
+		alert(`${a}~${b} 총합 : ${sum(a,b)}`)
+	}
+	
+	printSum(1,3)
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

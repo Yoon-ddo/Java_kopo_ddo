@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+	
+		// querySelectorAll('') : 여러개 배열로 선택
+		let tags = document.querySelectorAll('td')
+		tags[0].innerHTML = '아이뒤~'
+		
+		
+		// getElementsByTagName('') : 배열로 반환
+		tags = document.getElementsByTagName('td')
+		tags[1].innerText = '패쏴드~'
+		document.write(tags[1].innerText)
+		
+		
+
+	}
+</script>
+</head>
+<body>
+	<table style="width:100; height:100;" border = "1">
+		<tr>
+			<td >ID</td>
+		</tr>
+		<tr>
+			<td >Password</td>
+		</tr>
+	</table>
+
+</body>
+</html>

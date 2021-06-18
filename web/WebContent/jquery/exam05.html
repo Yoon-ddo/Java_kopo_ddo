@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		/*
+		$('input').keydown(function(){
+			$(this).css('color', 'orange')
+		})
+		$('input').keyup(function(){
+			$(this).css('color','black')
+		})
+		
+		$('input').focus(function(){
+			$(this).css('border','2px dotted green')
+			$(this).css('background-color','2px dotted lemon')
+		}) //마우스의 행동이 input태그로 갔다면.
+		
+		
+		$('input').blur(function(){
+			$(this).css('border',"1px solid black")	
+		})
+		*/
+		
+		
+		//이벤트 추가 .on()
+		$('input').on({
+			'keydown' : function(){
+				$(this).css('color','orange')
+			}, 'keyup' : function(){
+				$(this).css('color', 'black')
+			},'focus' : function(){
+				$(this).css('border','2px solid green')
+				$(this).css('background-color','yellow')
+			},'blur' : function(){
+				$(this).css({
+					'border':'1px solid pink',
+					'background-color' : 'white'
+				})
+				//$(this).css('border',"1px solid black")
+				//$(this).css('background-color','white')
+			}
+		})
+	})
+</script>
+</head>
+<body>
+	이름 : <input type="text"><br>
+	전번 : <input type="text"><br>
+</body>
+</html>

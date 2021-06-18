@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	
+	
+	/*
+	window.onload = function(){
+		//let h1Tag = document.getElementById('h01')
+		//h1Tag.style.display = 'none'
+		
+		
+		let hTags = document.getElementTagname('h1')
+		hTags.forEach(function(element){
+			element.style.display = 'none'
+		})
+		
+	}
+	*/
+	
+	$(document).ready(function(){
+		alert('!!!')
+		//숨기기 : .hide()
+		// $('h1') 	 : h1태그
+		// $('#h01') : id가 h01
+		// $('.h01') : class가 h01
+		$('.h01:first').hide() //첫번째것. <-> .last()
+
+		
+	})
+	
+</script>
+</head>
+<body>
+	<h1 id="h01">Hello</h1>
+	<h1 id="h02">앙녕</h1>
+	<hr>
+	<h1 class="h01">Hello</h1>
+	<h1 class="h02">앙녕</h1>
+</body>
+</html>

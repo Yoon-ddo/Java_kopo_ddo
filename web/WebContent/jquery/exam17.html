@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	#ancester *{
+		display:block;
+		border:1px solid red;
+		margin:10px;
+		padding:10px;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		//부모 : .parent()
+		//$('span').parent().css('border-color','blue')
+		//$('span').parents('div').css('border','2px solid blue')//부모중 div인것만
+		
+		// .parentsUntil()
+		//$('span').parentsUntil('div').css('border-color','blue') // 부모에서 div가 나오기 전까지의 것들만
+		
+		
+		//자식 : .children()
+		//$('#ancester').children('#div02').css('border-color','blue')
+		
+		
+		//찾기 .find()
+		//$('#ancester').find('ul').css('border-color','blue')
+		
+		
+		//$('#ancester').find('span').css('border-color','blue')
+		$('#ancester').find('span').last().css('border-color','blue')
+		
+		
+	})
+</script>
+</head>
+<body>
+	<div id="ancester">
+		<div id="div01">div01
+			<ul>ul
+				<li>li
+					<span>span</span>
+				</li>
+			</ul>
+		</div>
+		<div id="div02">div02
+			<p>p
+			<span>span</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

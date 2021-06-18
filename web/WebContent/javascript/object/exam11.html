@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 내장객체</title>
+<script>
+	// Number, String, Array, Math, Date, Object
+	let num = 100
+	let num2 = new Number(100) // Object로 인식함. -> 프로토타입가능
+	console.log(typeof num == 'number')
+	console.log(typeof num2 == 'number')
+	
+	console.log(num.constructor == Number)
+	console.log(num2.constructor == Number)
+	
+	Object.prototype.info = function(){
+		console.log(this)
+	}
+	
+	num2.info()
+	
+	
+	
+	
+	//문자
+	let str = "Hello World"
+	//n번째 문자.
+	console.log(str.charAt(0))
+	console.log(str.concat('!!!'))
+	
+	let str2 = new String("Hello World")
+	
+	//동적으로 링크타도록.
+	String.prototype.changeStr = function(){
+		return this.bold().fontcolor('red').fontsize('20pt').link('http://www.naver.com')
+	}
+	
+	document.write(str2 + '<br>')
+	document.write(str2.changeStr() + '<br>') // this는 str2
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

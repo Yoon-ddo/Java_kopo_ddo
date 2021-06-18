@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		/*
+		let pTags = document.getElementsByTagName('p')
+		let html = pTags[0].innerHTML
+		let text = pTags[0].innerText
+		alert(html+'\n'+text)
+		*/
+		
+		
+		//제이쿼리에서는 이렇게 간단하게 뽑을 수 있음
+		let html = $('p').html() // html함께 추출, 0번지의 데이터만 나옴
+		let text = $('p').text() // text만 추출, 모든 데이터가 나옴
+		// alert(html+'\n'+text)
+		
+		$('button').click(function(){
+			/*
+				let inputTg = document.getElementById('name')
+				let name = inputTg.value
+				document.write('입력된 이름 : ' + name)
+			*/
+			
+			let name = $('#name').val()
+			alert('입력된 이름 : '+name)
+			
+			
+		})
+		
+		let att = $('a').attr('href')
+		alert('추출된 주소 : '+att)
+		
+		
+		
+		
+		
+		
+	})
+</script>
+</head>
+<body>
+	<p>내이름은 <strong>홍길동</strong>이고, 별명은 <em>의적</em>입니다.</p>
+	<p>내이름은 <strong>홍길금</strong>이고, 별명은 <em>의적2</em>입니다.</p>
+	이름 : <input type="text" id="name">
+	<button>입력완료</button><br>
+	<a href="http://naver.com">네이바~</a>
+</body>
+</html>

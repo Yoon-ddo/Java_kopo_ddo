@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr){
+		this.name = name
+		this.phone = phone
+		this.addr = addr
+	}
+	
+	Person.prototype.hobby = '영화감상'
+	Person.prototype.info = function(){
+		let msg = ''
+		for(let key in this){
+			//if(key != 'info')
+			if(typeof(this[key]) != 'function') //function은 출력 노노.
+				msg += key +' : ' + this[key] + '\n'
+		}
+		alert(msg)
+	}
+	/*
+	let p = new Person('홍길동', '010-1111-2222', '경기도 광명시')
+	p.info()
+	console.log(p)
+	*/
+	
+	
+	
+	
+	/*
+	function Doctor(name, phone, addr, major){
+		this.name = name
+		this.phone = phone
+		this.addr = addr
+		this.major = major
+	}
+	*/
+	
+	//상속처럼 쓸수도 있다.
+	function Doctor(name, phone, addr, major){
+		//this.super = Person
+		//this.super(name,phone,addr)
+		
+		//Person.call(this, name, phone, addr)
+		//Person.call(this, ...arguments)
+		
+		//call 메소드는 인자 하나 하나를, apply는 인자 리스트를 전달합니다
+
+		Person.apply(this, arguments) // 정규연산자 노노 (내것에 붙이고 싶기 때문에 this를 써줌.)
+		this.major = major
+	}
+	
+	//상속의 여부는 프로토타입이 일치하는지에 달려있다.
+	Doctor.prototype = Person.prototype //D의 프로토타입을 P의 프로토타입으로 변경 
+	//Doctor.prototype = Object.create(Person.prototype)
+	//Doctor.prototype = new Person()
+	
+	
+	let d = new Doctor('나최고', '010-3333-3333', '서울시','신경외과')
+	console.log(d)
+	console.log("d Person : " + (d instanceof Person))
+	console.log("d Doctor : " + (d instanceof Doctor))
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

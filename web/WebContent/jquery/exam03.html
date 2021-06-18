@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+	<script>
+		$(document).ready(function(){
+			
+			alert('!!')
+			
+			//$('ul li:first').hide()
+			//$('ul li:first-child').hide()
+			
+			//$('a[target]').hide()
+			//$('a[href="http://naver.com"]').hide()
+			
+			
+			//$('input[type=button]').hide()
+			//$('input:button').hide()
+			//$(':button').hide() // 둘다삭제 : -> type속성
+			//$('button').hide() // button태그
+			
+			
+			$(':button').click(function(){
+				//$('h2').hide()
+				$(this).hide("drop", {direction : 'down'},'slow')
+			})
+			
+		})
+	
+	</script>
+</head>
+<body>
+
+	<h2>button 전</h2>
+	<input type="button" value="btn1">
+	<button>btn2</button>
+	<h2>button 후</h2>
+	
+	
+	<hr>
+	<h2>a Tag 전</h2>
+	<a href="http://naver.com">네이버</a>
+	<a href="http://daum.net" target="_blank">다음</a>
+	<h2>a Tag 후</h2>
+	<hr>
+
+	<h1>동물종류</h1>
+	<ul>
+		<li>호랑이</li>
+		<li>늑대</li>
+		<li>코끼리</li>
+		<li>여우</li>
+	</ul>
+	
+	<h1>음식종류</h1>
+	<ul>
+		<li>피자</li>
+		<li>치킨</li>
+		<li>파스타</li>
+		<li>떡볶이</li>
+		<li>돈까스</li>
+	</ul>
+</body>
+</html>

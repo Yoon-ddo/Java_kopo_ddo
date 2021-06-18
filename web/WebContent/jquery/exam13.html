@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		
+		/*
+		$('#btn01').click(function(){
+			let pTags = document.getElementsByTagName("p")
+			for (let i = 0; i<pTags.length; i++){
+				pTags[i].innerText = '문장이변환되었습니다.'
+			}
+		})
+		*/
+		
+		$('#btn01').click(function(){
+			$('p').text('<mark>문장이 변환되었습니다.</mark>')
+		})
+		
+		$('#btn02').click(function(){
+			$('p').html('<mark>문장이 변환되었습니다.</mark>')
+		})
+		
+		$('#btn03').click(function(){
+			$('a').attr('href','http://www.naver.com')
+			$('a').attr('target','_blank')
+		})
+		
+		$('#btn04').click(function(){
+			
+			/*
+			let pTags = document.getElementsByTagName('p')
+			for (let i in pTags){
+				pTags[i].innerHTML = i + ' : 문장변환'
+			}
+			*/
+
+			$('p').html(function(){
+				if(idx == 0){
+					return $('p').eq(0).html('두번째')
+				}else if(idx == 1){
+					return $('p').eq(1).html('두번째')
+				}
+			})
+			
+			
+			
+		})
+		
+		
+		
+	})
+</script>
+</head>
+<body>
+	<a href="http://www.daum.net">사이트이동</a>
+	<p>첫번째 문장</p>
+	<p>두번째 문장</p>
+	<button id="btn01">TEXT변환</button>
+	<button id="btn02">HTML변환</button><br>
+	<button id="btn03">주소</button>
+	<button id="btn04">문장변환</button>
+</body>
+</html>

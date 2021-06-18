@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.slider').bxSlider({
+			captions: true,
+			slideWidth: 400,
+			height:400,
+			auto: true,
+			autoControls: true,
+			stopAutoOnClick: true
+		})
+	})
+</script>
+
+</head>
+<body>
+	<div class="slider">
+    	<div><img src="img/cat.jpg" title="이쁜고양이"></div>
+		<div><img src="img/dog.jpg" title="귀여운강아지"></div>
+		<div><img src="img/simson.gif" title="띰뜬"></div>
+		<div><img src="img/sun.jpg" title="태양"></div>
+  	</div>
+</body>
+</html>

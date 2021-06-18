@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		/*
+		setTimeout(function(){
+			document.write('<h1>JAVASCRIPT</h1>')
+			//body에 적어둔 h2내용들 사라지고 h1내용을 덮어쓰기함.
+		},1000)
+		*/
+		
+		//태그는 사라지고 문자열만 추출
+		alert('innerText : ' + document.body.innerText)
+		//모든 태그까지 출력
+		alert('innerHTML : ' + document.body.innerHTML)
+		
+		
+		
+		
+		let list = ''
+		list += '<ul>'
+		list += '<li>aaa</li>'
+		list += '<li>bbb</li>'
+		list += '<li>ccc</li>'
+		list += '</ul>'
+		
+		// innerText : 태그를 문자열로 인식해서 body에 넣는다.
+		//document.body.innerText = list
+		
+		// innerHTML : 태그를 HTML로 인식해서 body에 넣는다.
+		// += : 원래있는 내용 뒤에 붙이기
+		document.body.innerHTML += list
+		
+	}
+</script>
+</head>
+<body>
+	안뇽하세용<br>
+	<h2>Hello</h2>
+
+</body>
+</html>

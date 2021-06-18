@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>클래스로 객체만들기</title>
+<script>
+	
+	class Person{ // class(프로토타입 기반으로...) = 생성자 
+		 
+		// class안에서 함수만들때는 function 키워드 쓰지 않음
+		constructor(name, phone, addr){ 
+			//this.name = name
+			//this.phone = phone
+			//this.addr = addr
+			
+			//은닉성을 주기위해 '_'를 사용
+			this._name = name
+			this._phone = phone
+			this._addr = addr
+		}
+		//알아서 프로토타입으로 만들어줌
+		info(){
+			//alert(`name : ${ this.name } \ phone : ${ this.phone } \ addr : ${ this.addr}`)
+			let msg = ''
+			for(let key in this){
+				msg += key + " : " + this[key] + "\n"
+			}
+			alert(msg)
+		}
+		
+		get name(){
+			return this._name
+		}
+		set name(name){
+			this._name = name
+		}
+		get phone(){
+			return this._phone
+		}
+		set phone(phone){
+			this._phone = phone
+		}
+		get addr(){
+			return this._addr
+		}
+		set addr(addr){
+			this._addr = addr
+		}
+		
+	}
+
+	let p = new Person('홍길동', '010-1111-2222', '경기도 광명시')
+	p.info()
+	console.log(p)
+	p.name = '홍길순'
+	console.log(p.name)
+	
+	
+	class Doctor extends Person{
+		constructor(name, phone, addr, major){
+			super(name,phone,addr)
+			this._major = major
+		}		
+		get major(){
+			return this._major
+		}
+		set major(major){
+			this._major = major
+		}
+	}
+	
+	let d = new Doctor('나최고', '010-3333-3333', '서울시','신경외과')
+	d.info() // Person의 프로토타입을 가져왔기 때문에 info가능
+	console.log(d)
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

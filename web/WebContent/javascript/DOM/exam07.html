@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		let divTag = document.getElementById("div01")
+		let h1Tag = document.getElementById('h01')
+		let spanTag = document.getElementById('span01')
+		
+		
+		divTag.onclick = function(){
+			alert('div click!')
+		}
+		
+		h1Tag.onclick = function(e){
+			alert('h1 click!')
+			
+			e = e || window.event //예외처리
+			
+			//이벤트 버블링 무효화
+			e.cancelBubble = true //상위태그인 div이벤트 수행 안함.
+		}
+		
+		spanTag.onclick = function(){
+			alert('span click!')
+		}
+		// span-h1-div순으로 메시지 나옴
+		// 이벤트 버블링 : 자신부터 부모를 따라 올라가면서 같은 이벤트가 있으면 호출하도록 하는것.
+		//<-> 이벤트 캡처링
+		
+	}
+</script>
+</head>
+<body>
+	<div id="div01">
+		<h1 id="h01">
+			<span id="span01">안녕하세요</span>
+		</h1>
+	</div>
+
+</body>
+</html>
