@@ -1,5 +1,10 @@
 # 2021년 KOPO에서 배운 것들
 * JAVA
-* Javascript,JQuery,html,css
+* web
+  * Javascript
+  * JQuery
+  * html
+  * css
+  * Servlet
 * Linux
 * Oracle SQL
