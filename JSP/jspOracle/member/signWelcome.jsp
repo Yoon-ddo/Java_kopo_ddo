@@ -15,9 +15,9 @@
  	String tel1 = request.getParameter("tel1");
  	String tel2 = request.getParameter("tel2");
  	String tel3 = request.getParameter("tel3");
- 	String post = request.getParameter("fpost")+"-"+request.getParameter("lpost");
- 	String basicAddr = request.getParameter("addrloc") + " " + request.getParameter("basicaddr");
- 	String detailAddr = request.getParameter("detailaddr");
+ 	String post = request.getParameter("zip");
+ 	String basicAddr = request.getParameter("addr1");
+ 	String detailAddr = request.getParameter("addr2");
  	
  	Connection conn = new ConnectionFactory().getConnection();
  	StringBuilder sql = new StringBuilder();
