@@ -9,8 +9,8 @@
  	request.setCharacterEncoding("utf-8");
  	Connection conn = new ConnectionFactory().getConnection();
  	StringBuilder sql = new StringBuilder();
- 	sql.append("select id, name, tel1||'-'||tel2||'-'||tel3 as tel, email_id||email_domain as email, to_char(reg_date,'YYYY-MM-DD')as reg_date ");
- 	sql.append("from t_member ");
+ 	sql.append(" select id, name, tel1||'-'||tel2||'-'||tel3 as tel, email_id||email_domain as email, to_char(reg_date,'YYYY-MM-DD')as reg_date ");
+ 	sql.append(" from t_member ");
  	
  	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
  	ResultSet rs = pstmt.executeQuery();
@@ -28,7 +28,7 @@
 		<h2>회원조회프로그램에 오신 것을 환영합니다!</h2>
 		<hr width="80%">
 		<br>
-		<form action="detailMember.jsp" method="post">
+		<form >
 			<select id="searchbox" width="40px">
 				<option selected>검색</option>
 				<option value="id">아이디</option>
@@ -57,7 +57,7 @@
 				
 			%>
 				<tr>
-					<td><%= id %></td>
+					<td><a href="detailMember.jsp?id=<%= id %>"><%= id %></a></td>
 					<td><%= name %></td>
 					<td><%= tel %></td>
 					<td><%= email %></td>
