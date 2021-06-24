@@ -1,10 +1,16 @@
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="kr.ac.kopo.board.vo.BoardVO"%>
 <%@page import="jdbcUtil.JDBCClose"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="jdbcUtil.ConnectionFactory"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <%
 	Connection conn = new ConnectionFactory().getConnection();
 	StringBuilder sql = new StringBuilder();
@@ -15,6 +21,29 @@
 	conn.prepareStatement(sql.toString());
 	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
 	ResultSet rs = pstmt.executeQuery();
+	
+	List<BoardVO> list = new ArrayList<>();
+	
+	while(rs.next()){
+		
+		int no = rs.getInt("no");
+		String title = rs.getString("title");
+		String writer = rs.getString("writer");
+		String regDate = rs.getString("reg_date");
+		
+		BoardVO board = new BoardVO();
+		board.setNo(no);
+		board.setTitle(title);
+		board.setWriter(writer);
+		board.setRegDate(regDate);
+		
+		list.add(board);
+		
+	}
+	
+	JDBCClose.close(conn,pstmt);
+	pageContext.setAttribute("list", list);
+	
 
 %>
 <!DOCTYPE html>
@@ -50,21 +79,17 @@
 				<th width="20%">등록일</th>
 			</tr>
 			
-			<%
-				while(rs.next()){
-					int no = rs.getInt("no");
-					String tit = rs.getString("title");
-			%>	
-				<tr>
-					<td><%= no %></td>
-					<td><a href="detail.jsp?no=<%= no %>"><%= tit %></a></td>
-					<td><%= rs.getString("writer") %></td>
-					<td><%= rs.getString("reg_date") %></td>
-				</tr>
-			<%
-				}
-			%>	
 			
+			<c:forEach items="${ list }" var="l">
+			<tr>
+				<td>${ l.no }</td>
+				<td><a href="detail.jsp?no=${ l.no }">
+						<c:out value="${ l.title }" />
+					</a></td>
+				<td>${ l.writer }</td>
+				<td>${ l.regDate }</td>
+			</tr>
+			</c:forEach>
 		</table>
 		<br>
 		<button id="addBtn">새글등록</button>	
@@ -74,6 +99,3 @@
 </html>
 
 
-<%
-	JDBCClose.close(conn,pstmt);
-%>
