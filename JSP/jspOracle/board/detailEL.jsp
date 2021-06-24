@@ -6,6 +6,7 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	//1. 게시물번호 추출
 	int boardNo = Integer.parseInt(request.getParameter("no"));
@@ -49,6 +50,17 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판 상세</title>
+
+<script type="text/javascript" src="/Mission-Web/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+
+	$(document).click(function(){
+		$('#backBtn').click(function({
+			location.href="list.jsp"
+		}))
+		
+	})
+</script>
 </head>
 <body>
 	<div align="center">
@@ -59,29 +71,31 @@
 		<table border="1" style="width: 80%">
 			<tr>
 				<th width="25%">번호</th>
-				<td>${ board.no }</td>
+				<td><c:out value="${ board.no }"/></td>
 			</tr>
 			<tr>
 				<th width="25%">제목</th>
-				<td>${ board.title }</td>
+				<td><c:out value="${ board.title }"/></td>
 			</tr>
 			<tr>
 				<th width="25%">작성자</th>
-				<td>${ board.writer }</td>
+				<td><c:out value="${ board.writer }"/></td>
 			</tr>
 			<tr>
 				<th width="25%">내용</th>
-				<td>${ board.content }</td>
+				<td><c:out value="${ board.content }"/></td>
 			</tr>
 			<tr>
 				<th width="25%">조회수</th>
-				<td>${ board.viewCnt }</td>
+				<td><c:out value="${ board.viewCnt }"/></td>
 			</tr>
 			<tr>
 				<th width="25%">등록일</th>
-				<td>${ board.regDate }</td>
+				<td><c:out value="${ board.regDate }"/></td>
 			</tr>
 		</table>
+		<br>
+		<button id="backBtn">되돌아가기</button>
 	
 	</div>
 
