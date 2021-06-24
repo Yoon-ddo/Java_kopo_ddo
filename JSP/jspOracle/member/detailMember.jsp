@@ -49,6 +49,7 @@
 <script type="text/javascript" src="/Mission-Web/resources/js/jquery-3.6.0.min.js"></script>
 <script>
 	$(document).ready(function(){
+		
 		$('#backBtn').click(function(){
 			location.href="myMembers.jsp"	
 		})
