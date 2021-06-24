@@ -55,7 +55,7 @@
 <script>
 
 	$(document).click(function(){
-		$('#backBtn').click(function({
+		$('#backBtn').click(function(){
 			location.href="list.jsp"
 		}))
 		
